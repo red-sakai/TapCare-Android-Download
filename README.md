@@ -1,8 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TapCare Download Page
+
+A responsive web application for downloading and installing the TapCare Emergency Response App, designed specifically for Rizal High School students.
+
+## Overview
+
+TapCare is an emergency response application that provides quick access to emergency services, school safety resources, and immediate help when needed most. This download page offers a seamless experience for users to download the APK file and get detailed installation instructions.
+
+## Features
+
+- **Responsive Design**: Optimized for both mobile and desktop devices
+- **TapCare Branding**: Custom logo and matching color scheme (red gradient)
+- **Direct APK Download**: One-click download of the TapCare app
+- **Installation Guide**: Step-by-step instructions with visual aids
+- **Google Play Protect Handling**: Detailed guide for bypassing security warnings
+- **Mobile-First Approach**: Touch-friendly interface for mobile users
+
+## Project Structure
+
+```
+tapcare/
+├── src/
+│   └── app/
+│       ├── page.tsx              # Main download page
+│       ├── instructions/
+│       │   └── page.tsx          # Installation instructions page
+│       └── layout.tsx            # App layout and metadata
+├── public/
+│   ├── tapcare-logo.png          # TapCare logo
+│   ├── app-release.apk           # Android APK file
+│   ├── step1.jpg                 # Google Play Protect screenshot 1
+│   └── step2.jpg                 # Google Play Protect screenshot 2
+└── README.md
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd tapcare
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Add required files to the `public` folder:
+   - `tapcare-logo.png` - TapCare app logo
+   - `app-release.apk` - Android application file
+   - `step1.jpg` - Google Play Protect warning screenshot
+   - `step2.jpg` - Install without scanning screenshot
+
+### Development
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +73,81 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the download page.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Pages
 
-To learn more about Next.js, take a look at the following resources:
+### Main Download Page (`/`)
+- TapCare branding and description
+- Direct APK download button
+- Automatic redirect to instructions after download
+- Mobile-responsive design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Instructions Page (`/instructions`)
+- Step-by-step installation guide
+- Visual guides for Google Play Protect handling
+- Mobile-optimized layout
+- Return navigation to main page
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technologies Used
 
-## Deploy on Vercel
+- **Next.js 14**: React framework with App Router
+- **TypeScript**: Type-safe JavaScript
+- **Tailwind CSS**: Utility-first CSS framework
+- **Next.js Image**: Optimized image loading
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Vercel (Recommended)
+1. Connect your repository to [Vercel](https://vercel.com)
+2. Deploy automatically with each push to main branch
+
+### Other Platforms
+Build the project and deploy the `out` folder:
+```bash
+npm run build
+```
+
+## File Requirements
+
+Ensure these files are placed in the `public` directory:
+
+- `tapcare-logo.png` - App logo (recommended: 512x512px)
+- `app-release.apk` - Android APK file
+- `step1.jpg` - Google Play Protect warning screen
+- `step2.jpg` - Install without scanning option screen
+
+## Customization
+
+### Branding
+- Update logo: Replace `public/tapcare-logo.png`
+- Modify colors: Edit Tailwind classes in component files
+- Change text: Update content in `page.tsx` files
+
+### APK File
+- Replace `public/app-release.apk` with your APK file
+- Update download filename in `src/app/page.tsx` if needed
+
+## Browser Support
+
+- Chrome/Edge 88+
+- Firefox 85+
+- Safari 14+
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## License
+
+This project is created for Rizal High School's Student Safety Initiative.
+
+## Support
+
+For technical support or questions about the TapCare app, contact Rizal High School IT Support.
