@@ -35,7 +35,7 @@ export default function Home() {
         <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
           <a
             href="/TapCare.apk"
-            download="TapCare.apk"
+            download="TapCare-2.apk"
             className="block w-full bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl transition-colors duration-200 shadow-lg text-sm sm:text-base"
             onClick={() => {
               // Redirect to instructions after a short delay to allow download
